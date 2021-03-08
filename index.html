@@ -144,7 +144,7 @@
 
   function pwaPrepareAndroidCheck() {
     window.addEventListener('beforeinstallprompt', function(deferredPrompt) {
-      showA2hsMsg(false, deferredPrompt);
+      pwaShowA2hsMsg(false, deferredPrompt);
     });
   }
 
@@ -160,17 +160,7 @@
     }
   }
 
-  ////////////////// The rest is upto you!
-  // You can set your own logic for window.pwaShowAndroidA2hsMsg(deferredPrompt)
-  // to show an A2HS message with an install button that when it's clicked, it
-  // hides the message and does the following to show a native install porompt:
-  // deferredPrompt.prompt(); deferredPrompt.userChoice.then(function(choiceResult){ if (choiceResult.outcome === 'accepted') { console.log('User accepted the A2HS prompt'); } else { console.log('User dismissed the A2HS prompt'); } deferredPrompt = null;
-  // if (!window.pwaShowAndroidA2hsMsg) { window.pwaShowAndroidA2hsMsg = function(deferredPrompt) { console.log('Android A2HS message is shown!'); }; };
-
-  // You can also set your own logic for window.pwaShowIOSA2hsMsg() to show an
-  // A2HS message such as this: 'Install this webapp on your device: Tab
-  // "Share" icon and then add to Homescreen.'
-  // if (!window.pwaShowIOSA2hsMsg) { window.pwaShowIOSA2hsMsg = function() { console.log('IOS A2HS message is shown!'); }; };
+  
   </script>
 
   <body data-spy="scroll" data-target="#header" data-offset="80">
@@ -725,7 +715,7 @@
 
         <h2 class="ali-js-revealer m-heading-sub-animated" data-ali-effect-class="m-heading-sub-animated__shown">Message Me</h2>
 
-        <form id="form" class="m-form" action="http://www.myappsnippet.com/ali/projects/8/extras/mail.php?formName=imalitavakoli_contact" method="post">
+        <form id="form" class="m-form" action="https://www.myappsnippet.com/ali/projects/8/extras/mail.php?formName=imalitavakoli_contact" method="post">
           <div class="form-row">
             <div class="form-group col-md-6">
               <label for="name">Name *</label>

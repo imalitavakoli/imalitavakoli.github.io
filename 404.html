@@ -144,7 +144,7 @@
 
   function pwaPrepareAndroidCheck() {
     window.addEventListener('beforeinstallprompt', function(deferredPrompt) {
-      showA2hsMsg(false, deferredPrompt);
+      pwaShowA2hsMsg(false, deferredPrompt);
     });
   }
 
@@ -160,17 +160,7 @@
     }
   }
 
-  ////////////////// The rest is upto you!
-  // You can set your own logic for window.pwaShowAndroidA2hsMsg(deferredPrompt)
-  // to show an A2HS message with an install button that when it's clicked, it
-  // hides the message and does the following to show a native install porompt:
-  // deferredPrompt.prompt(); deferredPrompt.userChoice.then(function(choiceResult){ if (choiceResult.outcome === 'accepted') { console.log('User accepted the A2HS prompt'); } else { console.log('User dismissed the A2HS prompt'); } deferredPrompt = null;
-  // if (!window.pwaShowAndroidA2hsMsg) { window.pwaShowAndroidA2hsMsg = function(deferredPrompt) { console.log('Android A2HS message is shown!'); }; };
-
-  // You can also set your own logic for window.pwaShowIOSA2hsMsg() to show an
-  // A2HS message such as this: 'Install this webapp on your device: Tab
-  // "Share" icon and then add to Homescreen.'
-  // if (!window.pwaShowIOSA2hsMsg) { window.pwaShowIOSA2hsMsg = function() { console.log('IOS A2HS message is shown!'); }; };
+  
   </script>
 
   <body >
@@ -192,21 +182,21 @@
 
 
     <style type="text/css" media="screen">
-  .container {
-    margin: 10px auto;
-    max-width: 600px;
-    text-align: center;
-  }
-  h1 {
-    margin: 30px 0;
-    font-size: 4em;
-    line-height: 1;
-    letter-spacing: -1px;
-  }
+.container {
+  margin: 10px auto;
+  max-width: 600px;
+  text-align: center;
+}
+h1 {
+  margin: 30px 0;
+  font-size: 4em;
+  line-height: 1;
+  letter-spacing: -1px;
+}
 
-  .ali-dark-mode-toggle {
-    visibility: hidden;
-  }
+.ali-dark-mode-toggle {
+  visibility: hidden;
+}
 </style>
 
 <div class="ali-dark-mode-toggle" data-ali-target="body" data-ali-target-dark-class="m-theme-dark" data-ali-target-light-class="m-theme-light">
