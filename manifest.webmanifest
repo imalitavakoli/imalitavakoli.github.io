@@ -1,0 +1,23 @@
+{
+  "short_name": "ImAliTavakoli",
+  "name": "I'm Ali Tavakoli",
+  "description": "Hi, I'm Ali Tavakoli, a web designer & web developer. At my spear time I sing and write lyrics, acting is another secret weapon I have here in my pocket!",
+  "icons": [
+    {
+      "src": "/assets/images/android-chrome-192x192.png",
+      "type": "image/png",
+      "sizes": "192x192"
+    },
+    {
+      "src": "/assets/images/android-chrome-512x512.png",
+      "type": "image/png",
+      "sizes": "512x512"
+    }
+  ],
+  "scope": "/",
+  "start_url": "/?launch=pwa",
+  "display": "standalone",
+  "orientation": "portrait-primary",
+  "theme_color": "#eeeeee",
+  "background_color": "#eeeeee"
+}

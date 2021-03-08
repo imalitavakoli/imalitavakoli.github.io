@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>I'm Ali Tavakoli</title>
+
+  <!-- Behavioral Meta Data -->
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="#eeeeee" />
+  <meta name="apple-mobile-web-app-title" content="I'm Ali Tavakoli" />
+  <meta name="theme-color" content="#eeeeee" />
+
+  <!-- Favicon -->
+  <link rel="shortcut icon" href="./favicon.ico" />
+  <link rel="apple-touch-icon" href="./apple-touch-icon.png">
+  <link rel="icon" type="image/png" href="./assets/images/android-chrome-192x192.png" sizes="192x192" />
+
+  <!-- Core Meta Data -->
+	<meta name="author" content="Ali Tavakoli">
+  <meta name="description" content="I'm a web designer and web developer. At my spear time I sing and write lyrics, acting is another secret weapon I have here in my pocket!">
+	<meta name="keywords" content="imalitavakoli,tutorial,javascript,jquery,es6,html,css,html5,css3">
+
+  <!-- Humans -->
+	<link rel="author" href="humans.txt" />
+
+  <!-- Original Source of Content -->
+  <link rel="canonical" href="https://imalitavakoli.github.io/404.html">
+  <link rel="alternate" type="application/rss+xml" title="I'm Ali Tavakoli" href="/feed.xml">
+
+  <!-- Styles -->
+  
+  <link href="https://fonts.googleapis.com/css?family=Roboto|Roboto+Condensed|Roboto+Slab" rel="stylesheet">
+  <link rel="stylesheet" href="./assets/styles/vendor.min.css">
+  <link rel="stylesheet" href="./assets/styles/main.css">
+
+  <!-- Google Analytics -->
+  <script>
+  (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
+  function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
+  e=o.createElement(i);r=o.getElementsByTagName(i)[0];
+  e.src='https://www.google-analytics.com/analytics.js';
+  r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
+  ga('create','UA-190794408-1');ga('send','pageview');
+  </script>
+</head>
+
+
+  <link rel="manifest" href="./manifest.webmanifest" />
+  <script async src="./assets/scripts/pwacompat.js"></script>
+
+
+
+
+  <style>
+  noscript {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 30px;
+    width: 100%;
+    font-family: Arial, sans-serif;
+    color: #ccc;
+    background-color: #333;
+    z-index: 2001;
+  }
+  </style>
+
+<!-- /////////////////////////////////////////////// APP SHELL: CSS/JS START -->
+  <style>
+  .pwa-loader {
+    --app-shell-loader-color: #333;
+    --app-shell-bg-color: #eee;
+
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--app-shell-bg-color);
+    z-index: 3000;
+    transition: opacity .4s;
+  }
+
+  .pwa-loader--loaded {
+    opacity: 0;
+    /* visibility: hidden; */
+    pointer-events: none;
+  }
+
+  .pwa-loader__holder {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+  }
+
+  .pwa-loader__preloader {
+    color: var(--app-shell-loader-color);
+    font-family: Arial, sans-serif;
+    font-size: 12px;
+    font-weight: bold;
+    text-transform: uppercase;
+    text-align: center;
+    letter-spacing: 4px;
+    user-select: none;
+    pointer-events: none;
+  }
+
+  .pwa-loader__preloader svg path,
+  .pwa-loader__preloader svg rect,
+  .pwa-loader__preloader svg circle {
+    fill: var(--app-shell-loader-color);
+  }
+
+  .pwa-loader__preloader svg {
+    animation: spin-preloader 2s linear infinite;
+  }
+  @keyframes spin-preloader { 100% { transform:rotate(360deg); } }
+  </style>
+  <script>
+  // Remove the preloader when the page is loaded completely
+  window.addEventListener('load', function() {
+    $('#loader').addClass('pwa-loader--loaded');
+  });
+  </script>
+<!-- /////////////////////////////////////////////// APP SHELL: CSS/JS END   -->
+
+  <script>
+  // Prepare everything for a 'Add to Home Screen' custom message
+  if ( pwaPrepareIOSCheck() ) pwaShowA2hsMsg(true);
+  else pwaPrepareAndroidCheck();
+
+  function pwaPrepareIOSCheck() {
+    var isIos = /iphone|ipad|ipod/.test( window.navigator.userAgent.toLowerCase() );
+    var isInStandaloneMode = ('standalone' in window.navigator) && (window.navigator.standalone);
+
+    return isIos && !isInStandaloneMode;
+  }
+
+  function pwaPrepareAndroidCheck() {
+    window.addEventListener('beforeinstallprompt', function(deferredPrompt) {
+      showA2hsMsg(false, deferredPrompt);
+    });
+  }
+
+  function pwaShowA2hsMsg(isIOS = false, deferredPrompt = null) {
+    if (document.readyState === 'complete') {
+      if (!isIOS) pwaShowAndroidA2hsMsg(deferredPrompt);
+      else pwaShowIOSA2hsMsg();
+    } else {
+      window.addEventListener('load', function() {
+        if (!isIOS) pwaShowAndroidA2hsMsg(deferredPrompt);
+        else pwaShowIOSA2hsMsg();
+      });
+    }
+  }
+
+  ////////////////// The rest is upto you!
+  // You can set your own logic for window.pwaShowAndroidA2hsMsg(deferredPrompt)
+  // to show an A2HS message with an install button that when it's clicked, it
+  // hides the message and does the following to show a native install porompt:
+  // deferredPrompt.prompt(); deferredPrompt.userChoice.then(function(choiceResult){ if (choiceResult.outcome === 'accepted') { console.log('User accepted the A2HS prompt'); } else { console.log('User dismissed the A2HS prompt'); } deferredPrompt = null;
+  // if (!window.pwaShowAndroidA2hsMsg) { window.pwaShowAndroidA2hsMsg = function(deferredPrompt) { console.log('Android A2HS message is shown!'); }; };
+
+  // You can also set your own logic for window.pwaShowIOSA2hsMsg() to show an
+  // A2HS message such as this: 'Install this webapp on your device: Tab
+  // "Share" icon and then add to Homescreen.'
+  // if (!window.pwaShowIOSA2hsMsg) { window.pwaShowIOSA2hsMsg = function() { console.log('IOS A2HS message is shown!'); }; };
+  </script>
+
+  <body >
+
+<!-- /////////////////////////////////////////////// APP SHELL: HTML START   -->
+    <div class="pwa-loader" id="loader">
+      <div class="pwa-loader__holder">
+        <div class="pwa-loader__preloader">
+          <svg xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" preserveAspectRatio="xMidYMid meet" viewBox="0 0 100 100" style="stroke: none;">
+            <path d="M73,50c0-12.7-10.3-23-23-23S27,37.3,27,50 M30.9,50c0-10.5,8.5-19.1,19.1-19.1S69.1,39.5,69.1,50"></path>
+          </svg>
+          Loading...
+        </div>
+      </div>
+    </div>
+<!-- /////////////////////////////////////////////// APP SHELL: HTML END     -->
+
+
+
+
+    <style type="text/css" media="screen">
+  .container {
+    margin: 10px auto;
+    max-width: 600px;
+    text-align: center;
+  }
+  h1 {
+    margin: 30px 0;
+    font-size: 4em;
+    line-height: 1;
+    letter-spacing: -1px;
+  }
+
+  .ali-dark-mode-toggle {
+    visibility: hidden;
+  }
+</style>
+
+<div class="ali-dark-mode-toggle" data-ali-target="body" data-ali-target-dark-class="m-theme-dark" data-ali-target-light-class="m-theme-light">
+  <input type="checkbox"/>
+</div>
+
+<div class="container">
+  <h1>404</h1>
+
+  <p><strong>Page not found :(</strong></p>
+  <p>The requested page could not be found.</p>
+</div>
+
+
+    
+
+<script src="./assets/scripts/vendor.min.js" charset="utf-8"></script>
+<script src="./assets/scripts/main.min.js" charset="utf-8"></script>
+
+
+
+
+
+
+
+    <script>
+    // Check that service workers are supported
+    if ('serviceWorker' in navigator) {
+      // Use the window load event to keep the page load performant
+      window.addEventListener('load', function() {
+        navigator.serviceWorker.register('./sw.js');
+      });
+    }
+    </script>
+
+    <noscript>Psst! Please enable JavaScript to continue using this application.</noscript>
+
+  </body>
+
+</html>
