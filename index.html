@@ -34,7 +34,7 @@
   
   <link href="https://fonts.googleapis.com/css?family=Roboto|Roboto+Condensed|Roboto+Slab" rel="stylesheet">
   <link rel="stylesheet" href="./assets/styles/vendor.min.css">
-  <link rel="stylesheet" href="./assets/styles/main.css">
+  <link rel="stylesheet" href="./assets/styles/main.css?v=1.0">
 
   <!-- Google Analytics -->
   <script>
@@ -186,8 +186,8 @@
     <span class="badge">Psst!</span> You can <strong>install (Add to Home Screen)</strong>
     my website on your phone or desktop to visit it at any time later, even when you're offline. Cheers!
     <div class="m-notifier__btn-holder">
-      <div class="mr-1"><button id="androidNotifierInstall" type="button" class="btn btn-primary btn-block">Install</button></div>
-      <div class="ml-1"><button id="androidNotifierClose" type="button" class="btn btn-light btn-block">Not Now</button></div>
+      <div class="mr-1"><button id="androidNotifierInstall" type="button" class="btn m-btn btn-block">Install</button></div>
+      <div class="ml-1"><button id="androidNotifierClose" type="button" class="btn m-n-btn btn-block">Not Now</button></div>
     </div>
   </div>
 </div>
@@ -197,7 +197,7 @@
     my website on your IOS device to visit it at any time later, even when you're offline. Cheers!
     Just tab "<em>Share</em>" icon and then add to <em>Homescreen</em>.
     <div class="m-notifier__btn-holder">
-      <div><button id="iosNotifierClose" type="button" class="btn btn-light btn-block">OK</button></div>
+      <div><button id="iosNotifierClose" type="button" class="btn m-n-btn btn-block">OK</button></div>
     </div>
   </div>
 </div>
@@ -669,7 +669,9 @@
     </p>
 
     <div class="row">
-      <div class="col-md-4">
+      
+      <div class="col-md-12">
+      
 
         <h2 class="ali-js-revealer m-heading-sub-animated" data-ali-effect-class="m-heading-sub-animated__shown">My Info</h2>
 
@@ -711,56 +713,7 @@
         </ul>
 
       </div>
-      <div class="col-md-8">
-
-        <h2 class="ali-js-revealer m-heading-sub-animated" data-ali-effect-class="m-heading-sub-animated__shown">Message Me</h2>
-
-        <form id="form" class="m-form" action="https://www.myappsnippet.com/ali/projects/8/extras/mail.php?formName=imalitavakoli_contact" method="post">
-          <div class="form-row">
-            <div class="form-group col-md-6">
-              <label for="name">Name *</label>
-              <input type="text" class="form-control" id="name" name="name" required>
-            </div>
-            <div class="form-group col-md-6">
-              <label for="email">Email *</label>
-              <input type="email" class="form-control" id="email" name="email" required>
-            </div>
-          </div>
-          <div class="form-row">
-            <div class="form-group col-md-6">
-              <label for="subject">Subject</label>
-              <input type="text" class="form-control" id="subject" name="title">
-            </div>
-            <div class="form-group col-md-6">
-              <label for="website">Website</label>
-              <input type="url" class="form-control" id="website" name="website">
-            </div>
-          </div>
-          <div class="form-group">
-            <label for="message">Message *</label>
-            <textarea class="form-control" id="message" name="message" rows="3" required></textarea>
-          </div>
-          <div class="sr-only" aria-hidden="true"><input type="text" name="catcher" tabindex="-1" value=""></div>
-          <div class="form-row">
-            <div class="form-group col-md-2">
-              <button id="formSubmitBtn" type="submit" class="btn btn-block m-btn m-btn-loader">
-                <span class="m-btn-loader__txt">Send</span>
-                <div class="m-btn-loader__loading">
-                  <svg xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" preserveAspectRatio="xMidYMid meet" viewBox="0 0 100 100" style="stroke: none;">
-                    <path d="M73,50c0-12.7-10.3-23-23-23S27,37.3,27,50 M30.9,50c0-10.5,8.5-19.1,19.1-19.1S69.1,39.5,69.1,50">
-                      <animateTransform attributeName="transform"  attributeType="XML" type="rotate" from="0 50 50" to="360 50 50" dur="1s" repeatCount="indefinite" />
-                    </path>
-                  </svg>
-                </div>
-              </button>
-            </div>
-            <div class="form-group col-md-10">
-              <div id="formResult" class="alert alert-success m-alert invisible" role="alert"></div>
-            </div>
-          </div>
-        </form>
-
-      </div>
+      
     </div>
 
     <div class="m-section-bg m-section-bg--contact" data-modifier="-256"></div>
@@ -785,10 +738,10 @@
     
 
 <script src="./assets/scripts/vendor.min.js" charset="utf-8"></script>
-<script src="./assets/scripts/main.min.js" charset="utf-8"></script>
+<script src="./assets/scripts/main.min.js?v=1.0" charset="utf-8"></script>
 
 
-<script src="./assets/scripts/index.min.js" charset="utf-8"></script>
+<script src="./assets/scripts/index.min.js?v=1.0" charset="utf-8"></script>
 
 
 
