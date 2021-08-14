@@ -321,15 +321,15 @@ hr { margin-top: 5.72rem; border-color: var(--m-neutral-color); }
 
 .m-progress-holder { margin: 0 1rem; }
 
-.m-progress-holder.m-progress-holder__set .progress-bar__graphicdesign { width: 95%; }
+.m-progress-holder.m-progress-holder__set .progress-bar__graphicdesign { width: 90%; }
 
-.m-progress-holder.m-progress-holder__set .progress-bar__uiux { width: 95%; }
+.m-progress-holder.m-progress-holder__set .progress-bar__uiux { width: 90%; }
 
-.m-progress-holder.m-progress-holder__set .progress-bar__html { width: 90%; }
+.m-progress-holder.m-progress-holder__set .progress-bar__html { width: 95%; }
 
-.m-progress-holder.m-progress-holder__set .progress-bar__css { width: 90%; }
+.m-progress-holder.m-progress-holder__set .progress-bar__css { width: 95%; }
 
-.m-progress-holder.m-progress-holder__set .progress-bar__js { width: 85%; }
+.m-progress-holder.m-progress-holder__set .progress-bar__js { width: 95%; }
 
 .m-progress-holder.m-progress-holder__set .progress-bar__php { width: 70%; }
 
