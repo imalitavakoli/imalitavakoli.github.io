@@ -1,0 +1,23 @@
+{
+  "short_name": "NauticEd",
+  "name": "NED Sailing Simulator",
+  "description": "The NED sail simulator represents a real wind meter on a sailboat.",
+  "icons": [
+    {
+      "src": "images/android-chrome-192x192.png",
+      "type": "image/png",
+      "sizes": "192x192"
+    },
+    {
+      "src": "images/android-chrome-512x512.png",
+      "type": "image/png",
+      "sizes": "512x512"
+    }
+  ],
+  "scope": "",
+  "start_url": "?launch=pwa",
+  "display": "standalone",
+  "orientation": "portrait-primary",
+  "theme_color": "#eeeeee",
+  "background_color": "#eeeeee"
+}

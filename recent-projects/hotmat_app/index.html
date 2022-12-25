@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="">
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0, shrink-to-fit=no">
+  <title>hotmat</title>
+
+  <!-- Favicon -->
+  <!--[if IE]><link rel="icon" href="favicon.ico"><![endif]-->
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Roboto|Roboto+Condensed|Roboto+Slab" rel="stylesheet">
+
+  <!-- APP SHELL: Style -->
+  <style media="screen">
+  .pwa-loader {
+    --app-shell-loader-color: #333;
+    --app-shell-bg-color: #eee;
+  }
+  .pwa-loader {
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: var(--app-shell-bg-color);
+    z-index: 3000;
+  }
+  .pwa-loader--loaded {
+    display: none;
+  }
+  .pwa-loader__preloader {
+    min-width: 100px;
+    min-height: 100px;
+    color: var(--app-shell-loader-color);
+    user-select: none;
+    pointer-events: none;
+  }
+  .pwa-loader__preloader svg path,
+  .pwa-loader__preloader svg rect,
+  .pwa-loader__preloader svg circle {
+    fill: var(--app-shell-loader-color);
+  }
+  .pwa-loader__preloader svg {
+    animation: spin-preloader 1.5s linear infinite;
+  }
+  @keyframes spin-preloader {
+    100% {
+      transform:rotate(360deg);
+    }
+  }
+  </style>
+
+  <!-- APP SHELL: Script -->
+  <script>
+  window.addEventListener('load', function() {
+    setTimeout(function () {
+      document.getElementById('loader').classList.add('pwa-loader--loaded');
+    }, 500);
+  });
+  </script>
+
+  <link rel="stylesheet" href="css/vendor.min.css?1646048991459">
+  <link href="css/chunk-3a8ad6aa.41dfde5b.css" rel="prefetch"><link href="css/chunk-425c9758.d1e581bd.css" rel="prefetch"><link href="css/chunk-4a92f294.62740964.css" rel="prefetch"><link href="css/chunk-893fe6b4.e193bb41.css" rel="prefetch"><link href="js/chunk-3a8ad6aa.b1d00f22.js" rel="prefetch"><link href="js/chunk-425c9758.944a752e.js" rel="prefetch"><link href="js/chunk-4a92f294.649461a4.js" rel="prefetch"><link href="js/chunk-893fe6b4.5954c504.js" rel="prefetch"><link href="css/app.3556ddd3.css" rel="preload" as="style"><link href="js/app.c184e0a9.js" rel="preload" as="script"><link href="js/chunk-vendors.6e5dd87b.js" rel="preload" as="script"><link href="css/app.3556ddd3.css" rel="stylesheet"><link rel="icon" type="image/png" sizes="32x32" href="img/icons/favicon-32x32.png"><link rel="icon" type="image/png" sizes="16x16" href="img/icons/favicon-16x16.png"><link rel="manifest" href="manifest.json"><meta name="theme-color" content="#f94b4d"><meta name="apple-mobile-web-app-capable" content="no"><meta name="apple-mobile-web-app-status-bar-style" content="default"><meta name="apple-mobile-web-app-title" content="hotmat"><meta name="msapplication-TileColor" content="#000000"></head>
+
+  <body>
+  <noscript style="position: relative; z-index: 3001;">
+    <strong>We're sorry but hotmat doesn't work properly without JavaScript enabled. Please enable it to continue.</strong>
+  </noscript>
+
+  <!-- APP SHELL: HTML -->
+  <div class="pwa-loader" id="loader">
+    <div class="pwa-loader__holder">
+      <div class="pwa-loader__preloader">
+        <svg xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" preserveAspectRatio="xMidYMid meet" viewBox="0 0 100 100" style="stroke: none;">
+          <path d="M73,50c0-12.7-10.3-23-23-23S27,37.3,27,50 M30.9,50c0-10.5,8.5-19.1,19.1-19.1S69.1,39.5,69.1,50"></path>
+        </svg>
+      </div>
+    </div>
+  </div>
+
+  <div id="app"></div>
+
+  <!-- built files will be auto injected -->
+  <script type="text/javascript" src="js/vendor.min.js?1646048991459"></script>
+  <script type="text/javascript" src="js/chunk-vendors.6e5dd87b.js"></script><script type="text/javascript" src="js/app.c184e0a9.js"></script></body>
+</html>

@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="authoring-tool" content="Adobe_Animate_CC">
+<title>NED Sailing Simulator</title>
+
+<!-- Behavioral Meta Data -->
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="#eeeeee" />
+<meta name="apple-mobile-web-app-title" content="NED Sailing Simulator" />
+<meta name="theme-color" content="#eeeeee" />
+
+<!-- Favicon -->
+<link rel="shortcut icon" href="./favicon.ico" />
+<link rel="apple-touch-icon" href="./apple-touch-icon.png">
+<link rel="icon" type="image/png" href="./images/android-chrome-192x192.png" sizes="192x192" />
+
+<!-- Core Meta Data -->
+<meta name="author" content="Ali Tavakoli">
+<meta name="description" content="The NED sail simulator represents a real wind meter on a sailboat.">
+<meta name="keywords" content="NED,Sailing,Simulator,NauticEd">
+
+<!-- PWA -->
+<link rel="manifest" href="./manifest.webmanifest" />
+<script async src="./scripts/pwacompat.js"></script>
+
+<!-- CSS -->
+<link rel="stylesheet" href="./styles/main.css">
+
+<!-- JS -->
+<script src="./scripts/main.js"></script>
+
+
+
+
+<!-- /////////////////////////////////////////////// APP SHELL: CSS/JS START -->
+<style>
+.pwa-loader {
+	--app-shell-loader-color: #333;
+	--app-shell-bg-color: #eee;
+
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: var(--app-shell-bg-color);
+	z-index: 3000;
+	transition: opacity .4s;
+}
+
+.pwa-loader--loaded {
+	opacity: 0;
+	/* visibility: hidden; */
+	pointer-events: none;
+}
+
+.pwa-loader__holder {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 100%;
+}
+
+.pwa-loader__preloader {
+	color: var(--app-shell-loader-color);
+	font-family: Arial, sans-serif;
+	font-size: 12px;
+	font-weight: bold;
+	text-transform: uppercase;
+	text-align: center;
+	letter-spacing: 4px;
+	user-select: none;
+	pointer-events: none;
+}
+
+.pwa-loader__preloader svg path,
+.pwa-loader__preloader svg rect,
+.pwa-loader__preloader svg circle {
+	fill: var(--app-shell-loader-color);
+}
+
+.pwa-loader__preloader svg {
+	animation: spin-preloader 2s linear infinite;
+}
+@keyframes spin-preloader { 100% { transform:rotate(360deg); } }
+</style>
+<script>
+// Remove the preloader when the page is loaded completely
+window.addEventListener('load', function() {
+	document.getElementById('loader').classList.add('pwa-loader--loaded');
+});
+</script>
+<!-- /////////////////////////////////////////////// APP SHELL: CSS/JS END -->
+
+
+
+
+<!-- ///////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////// DO NOT TOUCH CODES: START -->
+<style>
+  #animation_container {
+	position:absolute;
+	margin:auto;
+	left:0;right:0;
+  }
+</style>
+<script src="Simulator/libs/1.0.0/createjs.min.js"></script>
+<script src="Simulator.js?1615464269723"></script>
+<script type='text/javascript' src='Simulator/libs/SimulatorCore.min.js?1615464269723'></script>
+<script>
+var canvas, stage, exportRoot, anim_container, dom_overlay_container, fnStartAnimation;
+function init() {
+	canvas = document.getElementById("canvas");
+	anim_container = document.getElementById("animation_container");
+	dom_overlay_container = document.getElementById("dom_overlay_container");
+	var comp=AdobeAn.getComposition("C8DD58C0E95BAE4ABF032542D82761E7");
+	var lib=comp.getLibrary();
+	var loader = new createjs.LoadQueue(false);
+	loader.addEventListener("fileload", function(evt){handleFileLoad(evt,comp)});
+	loader.addEventListener("complete", function(evt){handleComplete(evt,comp)});
+	var lib=comp.getLibrary();
+	loader.loadManifest(lib.properties.manifest);
+}
+function handleFileLoad(evt, comp) {
+	var images=comp.getImages();
+	if (evt && (evt.item.type == "image")) { images[evt.item.id] = evt.result; }
+}
+function handleComplete(evt,comp) {
+	//This function is always called, irrespective of the content. You can use the variable "stage" after it is created in token create_stage.
+	var lib=comp.getLibrary();
+	var ss=comp.getSpriteSheet();
+	var queue = evt.target;
+	var ssMetadata = lib.ssMetadata;
+	for(i=0; i<ssMetadata.length; i++) {
+		ss[ssMetadata[i].name] = new createjs.SpriteSheet( {"images": [queue.getResult(ssMetadata[i].name)], "frames": ssMetadata[i].frames} )
+	}
+	exportRoot = new lib.Simulator();
+	stage = new lib.Stage(canvas);
+	//Registers the "tick" event listener.
+	fnStartAnimation = function() {
+		stage.addChild(exportRoot);
+		createjs.Ticker.framerate = lib.properties.fps;
+		createjs.Ticker.addEventListener("tick", stage);
+	}
+	//Code to support hidpi screens and responsive scaling.
+	AdobeAn.makeResponsive(true,'both',true,1,[canvas,anim_container,dom_overlay_container]);
+	AdobeAn.compositionLoaded(lib.properties.id);
+	fnStartAnimation();
+}
+</script>
+<!-- ///////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////// DO NOT TOUCH CODES: END -->
+
+
+
+
+</head>
+
+<body onload="init();" style="margin:0px;"> <!-- NOTE: Let Body call init() function on load complete -->
+
+
+
+
+<!-- /////////////////////////////////////////////// APP SHELL: HTML START   -->
+		<div class="pwa-loader" id="loader">
+			<div class="pwa-loader__holder">
+				<div class="pwa-loader__preloader">
+					<svg xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" preserveAspectRatio="xMidYMid meet" viewBox="0 0 100 100" style="stroke: none;">
+						<path d="M73,50c0-12.7-10.3-23-23-23S27,37.3,27,50 M30.9,50c0-10.5,8.5-19.1,19.1-19.1S69.1,39.5,69.1,50"></path>
+					</svg>
+					Loading...
+				</div>
+			</div>
+		</div>
+<!-- /////////////////////////////////////////////// APP SHELL: HTML END     -->
+
+
+
+
+<!-- ///////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////// DO NOT TOUCH CODES: START -->
+<div id="animation_container" style="background-color:rgba(255, 255, 255, 1.00); width:390px; height:610px">
+	<canvas id="canvas" width="390" height="610" style="position: absolute; display: block; background-color:rgba(255, 255, 255, 1.00);"></canvas>
+	<div id="dom_overlay_container" style="pointer-events:none; overflow:hidden; width:390px; height:610px; position: absolute; left: 0px; top: 0px; display: block;">
+	</div>
+</div>
+<!-- ///////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////// DO NOT TOUCH CODES: END -->
+
+<section id="content_container">
+	<p>
+	<a href="https://www.nauticed.org/sailing-simulator" target="_blank" title="Sailing simulator">INSTRUCTIONS</a><br>
+	Get two FREE sailing courses at <a href="https://www.nauticed.org/two-free-sailing-courses" title="free sailing courses" target="_blank">NauticEd</a><br>
+	21st Century Sailing Education
+	</p>
+</section>
+
+</body>
+</html>
